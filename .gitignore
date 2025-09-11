@@ -1,0 +1,62 @@
+# Private instructor materials - NEVER commit these
+f25/private/
+private/
+instructor/
+
+# MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+~*
+
+# Security - never commit these
+*.key
+*.pem
+*.crt
+*.p12
+secrets.json
+credentials.json
+.env
+
+# Student submissions (should be in separate repos)
+submissions/
+student-work/
+
+# Grading and answer keys
+*answer*key*
+*solution*
+grades/
+gradebook/
+
+# Quiz materials
+quiz-banks/
+test-banks/
+exams/
+
+# Canvas exports
+*.imscc
+*.mbz
+canvas-export/

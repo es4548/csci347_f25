@@ -1,0 +1,395 @@
+CSCI 347: DEVELOPMENT ENVIRONMENT CONFIGURATION GUIDE v2
+Network Security and Digital Forensics
+========================================================
+
+IMPORTANT: This guide assumes NO prior GitHub or development environment experience.
+Read each section completely before executing commands.
+Estimated completion time: 2-3 hours for beginners.
+
+========================================================
+SECTION 1: PREREQUISITES AND WARNINGS
+========================================================
+
+Required Software:
+- Python 3.11 specifically (NOT 3.10, 3.12, or 3.13)
+- Git version control system
+- GitHub account (free)
+- Text editor or IDE (VS Code recommended)
+- VirtualBox or UTM for virtual machines
+
+System Requirements:
+- 8GB RAM minimum (16GB recommended)
+- 100GB free disk space
+- Stable internet connection
+
+CRITICAL WARNINGS:
+1. NEVER change your system's default Python version
+2. NEVER use sudo with pip inside virtual environments
+3. ALWAYS work within a virtual environment for Python projects
+4. SAVE your work frequently to GitHub
+
+========================================================
+SECTION 2: GITHUB ACCOUNT SETUP (First Time Users)
+========================================================
+
+Step 1: Create GitHub Account
+1. Navigate to https://github.com
+2. Click "Sign up" button
+3. Choose a professional username (you'll use this throughout your career)
+4. Use your student email for education benefits
+5. Verify your email address via the link GitHub sends
+
+Step 2: Configure Git on Your Computer
+Open Terminal (Mac/Linux) or Git Bash (Windows) and type these commands:
+
+git config --global user.name "Your Full Name"
+git config --global user.email "your.email@example.com"
+
+Replace with your actual name and email. This identifies your commits.
+
+Step 3: Key GitHub Concepts
+- Repository (repo): A project folder with version history
+- Fork: Your personal copy of someone else's repository  
+- Clone: Download a repository to your computer
+- Commit: Save changes with a descriptive message
+- Push: Upload your commits to GitHub
+- Pull: Download updates from GitHub
+
+========================================================
+SECTION 3: PYTHON 3.11 INSTALLATION
+========================================================
+
+WINDOWS INSTALLATION:
+--------------------
+1. Visit https://www.python.org/downloads/release/python-3119/
+2. Download "Windows installer (64-bit)"
+3. Run the installer with these ESSENTIAL settings:
+   - CHECK "Add Python 3.11 to PATH" (bottom of first screen)
+   - CHECK "Install launcher for all users"
+   - Click "Install Now"
+
+4. Verify installation by opening Command Prompt:
+   python --version
+   
+   If that shows Windows Store or wrong version, try:
+   py --version
+   
+   Expected output: Python 3.11.9 (or similar 3.11.x)
+
+MAC INSTALLATION (Intel and Apple Silicon):
+-------------------------------------------
+1. Install Homebrew package manager (skip if already installed):
+   Open Terminal and paste this entire command:
+   
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   
+   Follow the prompts. This may take 5-10 minutes.
+
+2. Install Python 3.11 specifically:
+   brew install python@3.11
+
+3. Link Python 3.11 (if python3.11 command not found):
+   brew link python@3.11 --force --overwrite
+
+4. Verify installation:
+   python3.11 --version
+   
+   Expected output: Python 3.11.9 (or similar 3.11.x)
+
+NOTE: Your system Python (python3) remains unchanged. You'll use python3.11 command.
+
+LINUX INSTALLATION (Ubuntu/Debian):
+-----------------------------------
+1. Add Python 3.11 repository (for Ubuntu 22.04 and older):
+   sudo add-apt-repository ppa:deadsnakes/ppa
+   sudo apt update
+
+2. Install Python 3.11 and required components:
+   sudo apt install python3.11 python3.11-venv python3.11-pip -y
+
+3. Verify installation:
+   python3.11 --version
+   
+   Expected output: Python 3.11.9 (or similar 3.11.x)
+
+========================================================
+SECTION 4: COURSE REPOSITORY SETUP
+========================================================
+
+Step 1: Fork the Course Repository (Create Your Copy)
+1. While logged into GitHub, go to: https://github.com/DEmcla/csci347_f25
+2. Click the "Fork" button (top right corner)
+3. Select your account as the destination
+4. Wait for the fork to complete (usually 10-30 seconds)
+5. You now have your own copy at: https://github.com/YourUsername/csci347_f25
+
+Step 2: Clone YOUR Fork to Your Computer
+1. On YOUR fork's page, click the green "Code" button
+2. Ensure "HTTPS" is selected (not SSH)
+3. Copy the URL (looks like: https://github.com/YourUsername/csci347_f25.git)
+
+4. Open Terminal (Mac/Linux) or Command Prompt (Windows)
+
+5. Navigate to where you want to store the course:
+   Mac/Linux: cd ~/Documents
+   Windows: cd C:\Users\YourName\Documents
+
+6. Clone your repository (replace YourUsername):
+   git clone https://github.com/YourUsername/csci347_f25.git
+
+7. Enter the newly created directory:
+   cd csci347_f25
+
+Step 3: Link to Instructor's Repository for Updates
+Run this command to add the instructor's repository as "upstream":
+
+git remote add upstream https://github.com/DEmcla/csci347_f25.git
+
+This allows you to receive course updates and new materials.
+
+========================================================
+SECTION 5: PYTHON VIRTUAL ENVIRONMENT SETUP
+========================================================
+
+Understanding Virtual Environments:
+- Creates an isolated Python installation for this course only
+- Prevents package conflicts with other projects
+- Safe space to install course-specific packages
+
+Step 1: Create Virtual Environment with Python 3.11
+
+WINDOWS:
+python -m venv venv
+(If that fails, try: py -m venv venv)
+
+MAC/LINUX:
+python3.11 -m venv venv
+
+This creates a new folder called "venv" containing an isolated Python installation.
+
+Step 2: Activate the Virtual Environment
+
+WINDOWS (Command Prompt):
+venv\Scripts\activate
+
+WINDOWS (PowerShell - if above fails):
+venv\Scripts\Activate.ps1
+
+MAC/LINUX:
+source venv/bin/activate
+
+SUCCESS INDICATOR: You should see (venv) at the start of your command line.
+
+Step 3: Upgrade pip (Python's package installer)
+python -m pip install --upgrade pip
+
+Step 4: Install Required Course Packages
+pip install cryptography pyOpenSSL volatility3 scapy requests pytest
+
+If the above fails, install packages individually:
+pip install cryptography
+pip install pyOpenSSL  
+pip install volatility3
+pip install scapy
+pip install requests
+pip install pytest
+
+========================================================
+SECTION 6: VIRTUAL MACHINE SOFTWARE
+========================================================
+
+INTEL/AMD PROCESSORS (Most Windows PCs, older Macs):
+1. Download VirtualBox: https://www.virtualbox.org
+2. Run the installer with default settings
+3. Restart your computer when prompted
+
+APPLE SILICON MACS (M1, M2, M3 chips):
+1. Download UTM: https://mac.getutm.app/
+2. Open the downloaded file
+3. Drag UTM to your Applications folder
+Note: VirtualBox does NOT work on Apple Silicon
+
+========================================================
+SECTION 7: VERIFICATION AND TESTING
+========================================================
+
+Step 1: Verify Python and Virtual Environment
+Ensure your virtual environment is activated (you see (venv) in prompt), then:
+
+python --version
+
+Expected: Python 3.11.x
+
+pip list
+
+Expected: List showing cryptography, pyOpenSSL, and other installed packages
+
+Step 2: Run Course Verification Script
+Navigate to course folder and run:
+
+python public/week01-crypto-basics/verify-environment.py
+
+Expected successful output:
+✓ Python 3.11+ found
+✓ Virtual environment active
+✓ Required packages installed
+✓ Git configured
+✓ Ready to start!
+
+Step 3: Create Your Personal Assignment Directory
+Replace FirstName and LastName with your actual name:
+
+Windows:
+mkdir assignments\CSCI347_f25_FirstName_LastName\week01
+
+Mac/Linux:
+mkdir -p assignments/CSCI347_f25_FirstName_LastName/week01
+
+Step 4: Save Your Setup to GitHub
+git add assignments/
+git commit -m "Initial setup: created assignment directory"
+git branch -M main
+git push origin main
+
+First push will prompt for GitHub username and password.
+For password, you MUST use a Personal Access Token (see Troubleshooting).
+
+========================================================
+SECTION 8: TROUBLESHOOTING COMMON ISSUES
+========================================================
+
+ISSUE: "python" command not found
+SOLUTION: 
+- Windows: Try "py" instead, or reinstall Python with "Add to PATH" checked
+- Mac/Linux: Use python3.11 instead of python
+
+ISSUE: "pip" command not found
+SOLUTION: 
+- Ensure virtual environment is activated (see (venv) in prompt)
+- Try: python -m pip instead of pip
+
+ISSUE: Permission denied when activating virtual environment
+SOLUTION:
+- Windows PowerShell: Run as Administrator, then execute:
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+- Mac/Linux: Fix permissions: chmod +x venv/bin/activate
+
+ISSUE: Git push requires username/password repeatedly
+SOLUTION: GitHub now requires Personal Access Tokens instead of passwords
+1. Go to GitHub > Settings > Developer settings > Personal access tokens
+2. Choose either:
+   - "Generate new token (classic)" - simpler, works everywhere
+   - "Fine-grained personal access tokens" - more secure, preferred
+3. For classic token: Give it a name, select "repo" scope, set expiration
+   For fine-grained: Select your repository, grant Content and Metadata permissions
+4. Copy the generated token immediately (you won't see it again)
+5. Use this token as your password when Git prompts
+
+ISSUE: Package installation fails with error
+SOLUTION:
+- Ensure virtual environment is activated
+- Try installing packages one at a time
+- For volatility3 on Windows: May need Visual C++ Build Tools
+  Download from: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+- For scapy on Windows: Must install Npcap first
+  Download from: https://nmap.org/npcap/
+
+ISSUE: Repository fork fails or shows 404
+SOLUTION:
+- Ensure you're logged into GitHub
+- Verify the URL: https://github.com/DEmcla/csci347_f25
+- Contact instructor if repository appears private
+
+========================================================
+SECTION 9: DAILY WORKFLOW
+========================================================
+
+Each time you work on course materials:
+
+1. Open Terminal/Command Prompt
+
+2. Navigate to course directory:
+   cd ~/Documents/csci347_f25 (Mac/Linux)
+   cd C:\Users\YourName\Documents\csci347_f25 (Windows)
+
+3. Activate virtual environment:
+   source venv/bin/activate (Mac/Linux)
+   venv\Scripts\activate (Windows)
+
+4. Check for instructor updates:
+   git fetch upstream
+   git merge upstream/main
+   (If merge conflicts occur, ask for help in Canvas)
+
+5. Work on your assignments in the assignments folder
+
+6. Save your work to GitHub:
+   git add .
+   git commit -m "Completed [specific task/assignment]"
+   git push origin main
+
+7. When finished, deactivate virtual environment:
+   deactivate
+
+========================================================
+SECTION 10: GETTING HELP
+========================================================
+
+When You Need Help:
+
+1. Note the EXACT error message (copy and paste it)
+2. Document what command you ran
+3. Note what step of this guide you're on
+4. Check the Troubleshooting section above
+
+Post in Canvas Discussions with:
+- Your operating system (Windows 10/11, macOS version, Linux distribution)
+- The command that caused the error
+- The complete error message
+- What you expected to happen
+- What actually happened
+
+Remember: Setup challenges are normal. Every developer goes through this.
+The setup is a one-time investment that enables all future coursework.
+
+========================================================
+QUICK REFERENCE COMMANDS
+========================================================
+
+Activate virtual environment:
+- Windows: venv\Scripts\activate
+- Mac/Linux: source venv/bin/activate
+
+Check Python version: python --version
+List installed packages: pip list
+Deactivate virtual environment: deactivate
+
+Git commands:
+- Save changes: git add . && git commit -m "message"
+- Set branch name (first time): git branch -M main
+- Upload to GitHub: git push origin main
+- Get instructor updates: git fetch upstream && git merge upstream/main
+
+========================================================
+SUCCESS INDICATORS
+========================================================
+
+You're ready for coursework when:
+✓ GitHub account created and Git configured
+✓ Python 3.11 installed and verified
+✓ Virtual environment created and activated
+✓ All required packages installed
+✓ Course repository forked and cloned
+✓ Verification script passes all checks
+✓ First commit pushed to GitHub
+
+========================================================
+END OF SETUP GUIDE v2
+========================================================
+
+Next Steps:
+1. Take a break - you've accomplished a lot!
+2. Begin Week 1 tutorial when ready
+3. Remember to activate your virtual environment each session
+
+For additional help: Post in Canvas or attend office hours.

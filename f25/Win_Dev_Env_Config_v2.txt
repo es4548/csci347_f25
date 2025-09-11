@@ -1,0 +1,372 @@
+CSCI 347: WINDOWS DEVELOPMENT ENVIRONMENT SETUP GUIDE v2
+Network Security and Digital Forensics
+========================================================
+
+This guide is specifically for Windows users (Windows 10/11).
+
+========================================================
+PREREQUISITES AND SYSTEM CHECK
+========================================================
+
+Required:
+- Windows 10 version 1903+ or Windows 11
+- 8GB RAM minimum (16GB recommended)
+- 100GB free disk space
+- Administrator access to install software
+- Stable internet connection
+
+Check your Windows version:
+- Press Windows key + R
+- Type "winver" and press Enter
+- Note your version number
+
+========================================================
+STEP 1: GITHUB ACCOUNT SETUP (First Time Users)
+========================================================
+
+1. Create GitHub Account:
+   - Open your browser and go to https://github.com
+   - Click "Sign up"
+   - Choose a professional username (you'll use this throughout your career)
+   - Use your student email for education benefits
+   - Verify your email via the link GitHub sends
+
+2. Install Git for Windows:
+   - Go to https://git-scm.com/download/win
+   - Download the installer
+   - Run the installer with these settings:
+     * Select "Git from the command line and also from 3rd-party software"
+     * Choose "Use Visual Studio Code as Git's default editor" (or your preference)
+     * Select "Override the default branch name" and type "main"
+     * Choose "Git Credential Manager"
+     * Keep other defaults
+
+3. Configure Git:
+   Open Command Prompt (press Windows key, type "cmd", press Enter)
+   
+   Type these commands one at a time:
+   git config --global user.name "Your Full Name"
+   git config --global user.email "your.email@example.com"
+   
+   Replace with your actual name and email.
+
+========================================================
+STEP 2: INSTALL PYTHON 3.11
+========================================================
+
+1. Download Python 3.11:
+   - Go to https://www.python.org/downloads/release/python-3119/
+   - Scroll down to "Files"
+   - Download "Windows installer (64-bit)"
+
+2. Install Python:
+   CRITICAL: Follow these exact steps!
+   
+   - Run the installer
+   - CHECK "Add Python 3.11 to PATH" (bottom of first screen)
+   - CHECK "Install launcher for all users"
+   - Click "Install Now"
+   - Wait for installation to complete
+
+3. Verify installation:
+   Open a NEW Command Prompt (close any existing ones first)
+   
+   Type:
+   python --version
+   
+   If that shows Windows Store or wrong version, try:
+   py --version
+   
+   Expected output: Python 3.11.9 (or similar 3.11.x)
+
+4. Fix if Python not found:
+   - Uninstall Python from Control Panel
+   - Reinstall, ensuring "Add Python to PATH" is checked
+   - Restart computer
+
+========================================================
+STEP 3: FORK AND CLONE COURSE REPOSITORY
+========================================================
+
+1. Fork the Course Repository:
+   - Open browser and go to: https://github.com/DEmcla/csci347_f25
+   - Click "Fork" button (top right)
+   - This creates YOUR copy of the course materials
+
+2. Clone YOUR Fork to Your Computer:
+   - On YOUR fork's page, click green "Code" button
+   - Make sure "HTTPS" is selected
+   - Click the copy icon to copy the URL
+
+3. Open Command Prompt and navigate to Documents:
+   cd %USERPROFILE%\Documents
+
+4. Clone your repository (replace YourUsername):
+   git clone https://github.com/YourUsername/csci347_f25.git
+
+5. Enter the course directory:
+   cd csci347_f25
+
+6. Link to instructor's repository for updates:
+   git remote add upstream https://github.com/DEmcla/csci347_f25.git
+
+========================================================
+STEP 4: CREATE PYTHON VIRTUAL ENVIRONMENT
+========================================================
+
+A virtual environment keeps course packages separate from system Python.
+
+1. Make sure you're in the course directory:
+   cd
+   Should show: C:\Users\YourName\Documents\csci347_f25
+
+2. Create virtual environment:
+   python -m venv venv
+   
+   If that fails, try:
+   py -m venv venv
+
+3. Activate the virtual environment:
+   venv\Scripts\activate
+   
+   If you get an error about execution policies, see Troubleshooting.
+   
+   You should see (venv) at the beginning of your command prompt.
+
+4. Upgrade pip:
+   python -m pip install --upgrade pip
+
+5. Install required packages:
+   pip install cryptography pyOpenSSL volatility3 scapy requests pytest pandas
+
+   If any fail, install one at a time:
+   pip install cryptography
+   pip install pyOpenSSL
+   pip install volatility3
+   pip install scapy
+   pip install requests
+   pip install pytest
+   pip install pandas
+
+========================================================
+STEP 5: INSTALL ADDITIONAL WINDOWS DEPENDENCIES
+========================================================
+
+Some packages require additional Windows components:
+
+1. For scapy (network packet manipulation):
+   - Download Npcap: https://nmap.org/npcap/
+   - Run installer with default settings
+   - Check "Install Npcap in WinPcap API-compatible Mode"
+
+2. For volatility3 (if installation failed):
+   - You may need Visual C++ Build Tools
+   - Download from: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+   - Run installer, select "Desktop development with C++"
+   - This is a large download (several GB)
+
+========================================================
+STEP 6: INSTALL VIRTUALBOX
+========================================================
+
+1. Download VirtualBox:
+   - Go to https://www.virtualbox.org
+   - Click "Download VirtualBox"
+   - Choose "Windows hosts"
+
+2. Install VirtualBox:
+   - Run the downloaded installer
+   - Follow default installation options
+   - Restart computer when prompted
+
+3. Enable Virtualization (if VirtualBox doesn't work):
+   - Restart computer
+   - Enter BIOS (usually F2, F10, or DEL during startup)
+   - Find "Virtualization Technology" or "Intel VT-x" or "AMD-V"
+   - Enable it
+   - Save and exit BIOS
+
+========================================================
+STEP 7: VERIFY YOUR SETUP
+========================================================
+
+1. Open Command Prompt and navigate to course folder:
+   cd %USERPROFILE%\Documents\csci347_f25
+
+2. Activate virtual environment:
+   venv\Scripts\activate
+
+3. Check Python version:
+   python --version
+   Should show: Python 3.11.x
+
+4. Run course verification script:
+   python public\week01-crypto-basics\verify-environment.py
+   
+   Expected output:
+   ✓ Python 3.11+ found
+   ✓ Virtual environment active
+   ✓ Required packages installed
+   ✓ Git configured
+   ✓ Ready to start!
+
+5. Create your assignment directory:
+   mkdir assignments\CSCI347_f25_FirstName_LastName\week01
+   
+   Replace FirstName_LastName with your actual name.
+
+6. Save setup to GitHub:
+   git add assignments\
+   git commit -m "Initial setup: created assignment directory"
+   git branch -M main
+   git push origin main
+   
+   You'll need to enter GitHub username and Personal Access Token (see Troubleshooting).
+
+========================================================
+TROUBLESHOOTING FOR WINDOWS
+========================================================
+
+ISSUE: "python is not recognized as an internal or external command"
+SOLUTION:
+- Try "py" instead of "python"
+- Reinstall Python with "Add to PATH" checked
+- Manually add Python to PATH:
+  1. Search "Environment Variables" in Start Menu
+  2. Edit System Environment Variables
+  3. Add Python install directory to PATH
+
+ISSUE: "cannot be loaded because running scripts is disabled"
+SOLUTION: Enable script execution (run as Administrator):
+PowerShell:
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Or use Command Prompt instead of PowerShell
+
+ISSUE: Git push asks for password repeatedly
+SOLUTION: Use Personal Access Token
+1. GitHub → Settings → Developer settings → Personal access tokens
+2. Generate new token (classic) with "repo" scope
+3. Copy token immediately (won't show again)
+4. Use token as password when Git prompts
+
+ISSUE: "pip is not recognized"
+SOLUTION:
+- Ensure virtual environment is activated (see (venv) in prompt)
+- Try: python -m pip instead of pip
+
+ISSUE: Package installation fails with error
+SOLUTION:
+- For volatility3: Install Visual C++ Build Tools (see Step 5)
+- For scapy: Install Npcap first (see Step 5)
+- Try: python -m pip install --upgrade pip setuptools wheel
+- Then retry package installation
+
+ISSUE: VirtualBox won't start virtual machines
+SOLUTION:
+- Enable virtualization in BIOS (see Step 6)
+- Disable Hyper-V: 
+  bcdedit /set hypervisorlaunchtype off
+  (Run as Administrator, restart required)
+
+ISSUE: Git Bash vs Command Prompt confusion
+SOLUTION:
+- Both work, but stay consistent
+- Command Prompt: Use backslash \ for paths
+- Git Bash: Use forward slash / for paths
+
+========================================================
+DAILY WORKFLOW ON WINDOWS
+========================================================
+
+Each time you work on the course:
+
+1. Open Command Prompt (Windows key, type "cmd")
+
+2. Navigate to course directory:
+   cd %USERPROFILE%\Documents\csci347_f25
+
+3. Activate virtual environment:
+   venv\Scripts\activate
+
+4. Pull instructor updates:
+   git fetch upstream
+   git merge upstream/main
+   (If conflicts occur, ask for help)
+
+5. Work on assignments
+
+6. Save your work:
+   git add .
+   git commit -m "Completed [specific task]"
+   git push origin main
+
+7. When done, deactivate environment:
+   deactivate
+
+========================================================
+WINDOWS COMMAND PROMPT TIPS
+========================================================
+
+Useful commands:
+- cls: Clear screen
+- dir: List files and folders
+- cd folder: Enter folder
+- cd ..: Go up one level
+- cd \: Go to drive root
+- tab: Auto-complete file/folder names
+- ↑/↓ arrows: Navigate command history
+- Ctrl+C: Cancel current command
+
+PowerShell alternatives:
+- ls instead of dir
+- clear instead of cls
+- pwd to show current directory
+
+========================================================
+USING WINDOWS TERMINAL (OPTIONAL)
+========================================================
+
+Windows Terminal is a modern alternative to Command Prompt:
+
+1. Install from Microsoft Store (search "Windows Terminal")
+2. Provides tabs, better colors, and modern features
+3. Can run Command Prompt, PowerShell, and Git Bash in tabs
+4. Recommended for better development experience
+
+========================================================
+GETTING HELP
+========================================================
+
+If you encounter issues:
+1. Copy the exact error message (right-click to copy in cmd)
+2. Note what command you ran
+3. Post in Canvas with:
+   - Windows version (10 or 11)
+   - Command that caused error
+   - Complete error message
+   - Screenshot if helpful
+
+Common Windows-specific issues often relate to:
+- PATH configuration
+- Execution policies
+- Administrator permissions
+- Antivirus blocking installations
+
+========================================================
+SUCCESS CHECKLIST
+========================================================
+
+□ GitHub account created and configured
+□ Git for Windows installed
+□ Python 3.11 installed and in PATH
+□ Course repository forked and cloned
+□ Virtual environment created and activated
+□ All packages installed successfully
+□ Npcap installed for scapy
+□ Verification script passes
+□ First commit pushed to GitHub
+□ VirtualBox installed and working
+
+You're ready to begin Week 1!
+
+For additional help: Post in Canvas or attend office hours.

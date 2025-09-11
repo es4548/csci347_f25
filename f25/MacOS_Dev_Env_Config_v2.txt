@@ -1,0 +1,330 @@
+CSCI 347: macOS DEVELOPMENT ENVIRONMENT SETUP GUIDE v2
+Network Security and Digital Forensics
+========================================================
+
+This guide is specifically for macOS users (Intel and Apple Silicon Macs).
+
+========================================================
+PREREQUISITES AND SYSTEM CHECK
+========================================================
+
+Required Software:
+- macOS 10.15 (Catalina) or newer
+- 8GB RAM minimum (16GB recommended)
+- 100GB free disk space
+- Admin access to install software
+- Stable internet connection
+
+Check your Mac type:
+- Click Apple logo → About This Mac
+- Look for "Chip" or "Processor"
+  - Apple M1/M2/M3 = Apple Silicon
+  - Intel Core i5/i7/i9 = Intel Mac
+
+========================================================
+STEP 1: GITHUB ACCOUNT SETUP (First Time Users)
+========================================================
+
+1. Create GitHub Account:
+   - Open Safari/Chrome and go to https://github.com
+   - Click "Sign up"
+   - Choose a professional username (you'll use this throughout your career)
+   - Use your student email for education benefits
+   - Verify your email via the link GitHub sends
+
+2. Configure Git on Your Mac:
+   Open Terminal (find it in Applications → Utilities or press Cmd+Space and type "Terminal")
+   
+   Type these commands one at a time:
+   git config --global user.name "Your Full Name"
+   git config --global user.email "your.email@example.com"
+   
+   Replace with your actual name and email. This identifies your commits.
+
+========================================================
+STEP 2: INSTALL HOMEBREW PACKAGE MANAGER
+========================================================
+
+Homebrew is a package manager that makes installing software easy on Mac.
+
+1. Check if Homebrew is already installed:
+   Open Terminal and type:
+   brew --version
+   
+   If you see a version number, skip to Step 3.
+
+2. Install Homebrew:
+   Paste this entire command in Terminal:
+   
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   
+   - Press Enter when prompted
+   - Enter your Mac password when asked (you won't see it typing)
+   - Installation takes 5-10 minutes
+   
+3. After installation, you may see instructions to run commands like:
+   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   
+   Run these if shown (they set up Homebrew in your PATH).
+
+4. Verify installation:
+   brew --version
+   
+   Should show: Homebrew 4.x.x
+
+========================================================
+STEP 3: INSTALL PYTHON 3.11
+========================================================
+
+1. Install Python 3.11 using Homebrew:
+   brew install python@3.11
+
+2. Link Python 3.11 (if python3.11 command not found):
+   brew link python@3.11 --force --overwrite
+
+3. Verify installation:
+   python3.11 --version
+   
+   Expected output: Python 3.11.x
+
+4. Install Git (if not already installed):
+   brew install git
+
+IMPORTANT: Your system Python (/usr/bin/python3) remains unchanged.
+You'll use python3.11 command specifically for this course.
+
+========================================================
+STEP 4: FORK AND CLONE COURSE REPOSITORY
+========================================================
+
+1. Fork the Course Repository:
+   - Open browser and go to: https://github.com/DEmcla/csci347_f25
+   - Click "Fork" button (top right)
+   - This creates YOUR copy of the course materials
+
+2. Clone YOUR Fork to Your Mac:
+   - On YOUR fork's page, click green "Code" button
+   - Make sure "HTTPS" is selected
+   - Click the copy icon to copy the URL
+   
+3. In Terminal, navigate to where you want the course folder:
+   cd ~/Documents
+   
+4. Clone your repository (replace YourUsername with your GitHub username):
+   git clone https://github.com/YourUsername/csci347_f25.git
+   
+5. Enter the course directory:
+   cd csci347_f25
+   
+6. Link to instructor's repository for updates:
+   git remote add upstream https://github.com/DEmcla/csci347_f25.git
+
+========================================================
+STEP 5: CREATE PYTHON VIRTUAL ENVIRONMENT
+========================================================
+
+A virtual environment keeps course packages separate from system Python.
+
+1. Make sure you're in the course directory:
+   pwd
+   Should show: /Users/YourName/Documents/csci347_f25
+
+2. Create virtual environment with Python 3.11:
+   python3.11 -m venv venv
+
+3. Activate the virtual environment:
+   source venv/bin/activate
+   
+   You should see (venv) at the beginning of your Terminal prompt.
+
+4. Upgrade pip (Python's package installer):
+   python -m pip install --upgrade pip
+
+5. Install required course packages:
+   pip install cryptography pyOpenSSL volatility3 scapy requests pytest pandas
+
+   If any package fails, install them one at a time:
+   pip install cryptography
+   pip install pyOpenSSL
+   pip install volatility3
+   pip install scapy
+   pip install requests
+   pip install pytest
+   pip install pandas
+
+========================================================
+STEP 6: INSTALL VIRTUALIZATION SOFTWARE
+========================================================
+
+For Intel Macs:
+1. Download VirtualBox from https://www.virtualbox.org
+2. Open the downloaded .dmg file
+3. Double-click VirtualBox.pkg
+4. Follow installer prompts
+5. You may need to allow it in System Preferences → Security & Privacy
+
+For Apple Silicon Macs (M1/M2/M3):
+1. Download UTM from https://mac.getutm.app/
+2. Open the downloaded .dmg file
+3. Drag UTM to Applications folder
+Note: VirtualBox does NOT work on Apple Silicon
+
+========================================================
+STEP 7: VERIFY YOUR SETUP
+========================================================
+
+1. Check Python and packages (with venv activated):
+   python --version
+   Should show: Python 3.11.x
+   
+   pip list
+   Should show all installed packages
+
+2. Run course verification script:
+   python public/week01-crypto-basics/verify-environment.py
+   
+   Expected output:
+   ✓ Python 3.11+ found
+   ✓ Virtual environment active
+   ✓ Required packages installed
+   ✓ Git configured
+   ✓ Ready to start!
+
+3. Create your assignment directory:
+   mkdir -p assignments/CSCI347_f25_FirstName_LastName/week01
+   
+   Replace FirstName_LastName with your actual name.
+
+4. Save setup to GitHub:
+   git add assignments/
+   git commit -m "Initial setup: created assignment directory"
+   git branch -M main
+   git push origin main
+   
+   First push requires GitHub username and Personal Access Token (see Troubleshooting).
+
+========================================================
+TROUBLESHOOTING FOR macOS
+========================================================
+
+ISSUE: "python3.11: command not found"
+SOLUTION: 
+- Ensure Homebrew is in PATH: echo $PATH should include /opt/homebrew/bin or /usr/local/bin
+- Try: brew link python@3.11 --force --overwrite
+- Restart Terminal
+
+ISSUE: "pip: command not found"
+SOLUTION:
+- Make sure virtual environment is activated (see (venv) in prompt)
+- Try: python -m pip instead of just pip
+
+ISSUE: Permission denied when activating venv
+SOLUTION:
+- Check file permissions: ls -la venv/bin/activate
+- Fix if needed: chmod +x venv/bin/activate
+
+ISSUE: Git push asks for password
+SOLUTION: GitHub requires Personal Access Tokens
+1. GitHub → Settings → Developer settings → Personal access tokens
+2. Generate new token (classic) with "repo" scope
+3. Copy token and use as password when pushing
+
+ISSUE: Homebrew installation fails
+SOLUTION:
+- Make sure you have Xcode Command Line Tools:
+  xcode-select --install
+- Try again after installation completes
+
+ISSUE: Virtual environment uses wrong Python
+SOLUTION:
+- Delete and recreate: rm -rf venv
+- Create with explicit path: python3.11 -m venv venv
+
+ISSUE: Package installation fails
+SOLUTION:
+- For scapy: brew install libpcap
+- For cryptography: brew install openssl
+- Update pip first: python -m pip install --upgrade pip
+
+========================================================
+DAILY WORKFLOW ON macOS
+========================================================
+
+Each time you work on the course:
+
+1. Open Terminal (Cmd+Space, type "Terminal")
+
+2. Navigate to course directory:
+   cd ~/Documents/csci347_f25
+
+3. Activate virtual environment:
+   source venv/bin/activate
+
+4. Pull instructor updates:
+   git fetch upstream
+   git merge upstream/main
+   (If conflicts occur, ask for help)
+
+5. Work on assignments
+
+6. Save your work:
+   git add .
+   git commit -m "Completed [specific task]"
+   git push origin main
+
+7. When done, deactivate environment:
+   deactivate
+
+========================================================
+macOS TERMINAL TIPS
+========================================================
+
+Useful shortcuts:
+- Cmd+K: Clear Terminal screen
+- Cmd+T: New Terminal tab
+- Tab: Auto-complete file/folder names
+- ↑/↓ arrows: Navigate command history
+- Ctrl+C: Cancel current command
+- Ctrl+D: Exit/logout
+
+Navigation commands:
+- pwd: Show current directory
+- ls: List files
+- ls -la: List all files with details
+- cd folder: Enter folder
+- cd ..: Go up one level
+- cd ~: Go to home directory
+
+========================================================
+GETTING HELP
+========================================================
+
+If you encounter issues:
+1. Note the exact error message
+2. Take a screenshot (Cmd+Shift+4)
+3. Post in Canvas with:
+   - macOS version (Apple menu → About This Mac)
+   - Whether Intel or Apple Silicon
+   - Command that caused error
+   - Complete error message
+
+Remember: Everyone struggles with setup initially. This is normal.
+
+========================================================
+SUCCESS CHECKLIST
+========================================================
+
+□ GitHub account created and configured
+□ Homebrew installed
+□ Python 3.11 installed via Homebrew
+□ Course repository forked and cloned
+□ Virtual environment created and activated
+□ All packages installed successfully
+□ Verification script passes
+□ First commit pushed to GitHub
+□ UTM (Apple Silicon) or VirtualBox (Intel) installed
+
+You're ready to begin Week 1!
+
+For additional help: Post in Canvas or attend office hours.

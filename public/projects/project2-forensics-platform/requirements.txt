@@ -1,0 +1,115 @@
+# Core Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Database and ORM
+sqlalchemy==2.0.23
+alembic==1.12.1
+psycopg2-binary==2.9.9
+
+# Digital Forensics Core Libraries
+pytsk3==20230125
+volatility3==2.5.0
+yara-python==4.3.1
+python-magic==0.4.27
+
+# File Analysis and Processing
+pillow==10.1.0
+python-docx==1.1.0
+openpyxl==3.1.2
+pypdf==3.17.1
+
+# Hash Calculation and Verification
+hashlib-compat==0.1.1
+pysha3==1.0.2
+blake3==0.4.1
+
+# Timeline and Data Analysis
+pandas==2.1.3
+numpy==1.25.2
+dateutil==2.8.2
+arrow==1.3.0
+
+# Visualization and Reporting
+plotly==5.17.0
+matplotlib==3.8.2
+seaborn==0.13.0
+reportlab==4.0.7
+jinja2==3.1.2
+
+# Network Analysis
+scapy==2.5.0
+pypcap==1.3.0
+dpkt==1.9.8
+
+# Registry Analysis (Windows)
+python-registry==1.4
+
+# Email Analysis
+email-parser==0.1.2
+eml-parser==1.17.10
+
+# Mobile Forensics
+adb-shell==0.4.4
+pymobiledevice3==2.13.0
+
+# Compression and Archive Handling
+py7zr==0.20.8
+rarfile==4.1
+patool==1.12
+
+# Database Analysis
+sqlite-utils==3.35.2
+pymongo==4.6.0
+
+# Metadata Extraction
+exifread==3.0.0
+mutagen==1.47.0
+hachoir==3.2.0
+
+# Web Artifact Analysis
+browser-history==0.4.2
+sqlite3-to-mysql==2.1.7
+
+# Configuration and Environment
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# HTTP Client for APIs
+httpx==0.25.2
+requests==2.31.0
+
+# Utilities
+tqdm==4.66.1
+click==8.1.7
+tabulate==0.9.0
+colorama==0.4.6
+
+# Security and Encryption
+cryptography==41.0.8
+pycryptodome==3.19.0
+
+# Development and Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+black==23.11.0
+pylint==3.0.3
+mypy==1.7.1
+
+# Performance and Monitoring
+memory-profiler==0.61.0
+psutil==5.9.6
+structlog==23.2.0
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.4.8
+
+# File System Analysis
+dfvfs==20231007
+dfwinreg==20231207
+plaso==20231126

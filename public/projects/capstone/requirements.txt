@@ -1,0 +1,247 @@
+# Capstone Project Requirements
+# Comprehensive dependencies for all three capstone options
+
+# ===== CORE WEB FRAMEWORK AND API =====
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+django==4.2.7
+djangorestframework==3.14.0
+flask==3.0.0
+gunicorn==21.2.0
+celery==5.3.4
+
+# ===== DATABASE AND ORM =====
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+alembic==1.12.1
+django-extensions==3.2.3
+redis==5.0.1
+
+# ===== AUTHENTICATION AND SECURITY =====
+# From Project 1 - MFA System Integration
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+pyotp==2.9.0
+cryptography==41.0.8
+pyjwt==2.8.0
+qrcode[pil]==7.4.2
+
+# ===== DIGITAL FORENSICS =====
+# From Project 2 - Forensics Platform Integration
+pytsk3==20230125
+volatility3==2.5.0
+yara-python==4.3.1
+python-magic==0.4.27
+dfvfs==20231007
+dfwinreg==20231207
+plaso==20231126
+
+# ===== ADVANCED ANALYSIS AND ML =====
+# From Project 3 - Advanced Analysis Integration
+scikit-learn==1.3.2
+tensorflow==2.15.0
+torch==2.1.1
+pandas==2.1.3
+numpy==1.25.2
+scipy==1.11.4
+
+# ===== SOC PLATFORM COMPONENTS (Option A) =====
+# SIEM Integration
+elasticsearch==8.11.1
+elasticsearch-dsl==8.11.0
+kibana-api==0.1.1
+
+# Message Queue and Task Processing
+redis==5.0.1
+rabbitmq==0.2.0
+celery==5.3.4
+flower==2.0.1
+
+# Monitoring and Alerting
+prometheus-client==0.19.0
+grafana-api==1.0.3
+alertmanager-client==0.1.0
+
+# Network Analysis
+scapy==2.5.0
+netaddr==0.10.1
+pyshark==0.6
+
+# Threat Intelligence
+stix2==3.0.1
+taxii2-client==2.3.0
+misp-lib==0.1.0
+
+# ===== FORENSICS LAB COMPONENTS (Option B) =====
+# Mobile Forensics
+adb-shell==0.4.4
+pymobiledevice3==2.13.0
+androidviewclient==22.4.14
+
+# Malware Analysis
+pefile==2023.2.7
+pyelftools==0.30
+capstone==5.0.1
+radare2-py==0.2.0
+capa==6.1.0
+
+# Virtualization and Sandboxing
+docker==6.1.3
+paramiko==3.4.0
+libvirt-python==9.8.0
+
+# Educational Platform
+jupyter==1.0.0
+jupyterlab==4.0.9
+nbconvert==7.11.0
+
+# ===== RESEARCH PLATFORM COMPONENTS (Option C) =====
+# Academic Documentation
+sphinx==7.2.6
+sphinx-rtd-theme==1.3.0
+nbsphinx==0.9.3
+
+# Statistical Analysis
+statsmodels==0.14.1
+seaborn==0.13.0
+matplotlib==3.8.2
+
+# Experiment Management
+mlflow==2.8.1
+wandb==0.16.0
+optuna==3.4.0
+
+# ===== DATA PROCESSING AND ANALYSIS =====
+pandas==2.1.3
+numpy==1.25.2
+networkx==3.2.1
+python-dateutil==2.8.2
+arrow==1.3.0
+
+# ===== VISUALIZATION AND REPORTING =====
+plotly==5.17.0
+dash==2.16.1
+bokeh==3.3.2
+d3py==0.2.11
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Document Generation
+reportlab==4.0.7
+jinja2==3.1.2
+weasyprint==60.2
+pypdf==3.17.1
+
+# ===== WEB FRONTEND FRAMEWORKS =====
+# Note: These are Python packages; actual frontend may use React/Vue
+django==4.2.7
+flask==3.0.0
+streamlit==1.28.2
+gradio==4.7.1
+
+# ===== SECURITY TOOLS AND LIBRARIES =====
+requests==2.31.0
+httpx==0.25.2
+urllib3==2.1.0
+certifi==2023.11.17
+
+# Vulnerability Scanning
+python-nmap==0.7.1
+vulners==2.1.9
+shodan==1.31.0
+
+# ===== SYSTEM MONITORING AND LOGGING =====
+psutil==5.9.6
+structlog==23.2.0
+colorlog==6.8.0
+python-json-logger==2.0.7
+
+# ===== FILE PROCESSING =====
+python-docx==1.1.0
+openpyxl==3.1.2
+pillow==10.1.0
+mutagen==1.47.0
+exifread==3.0.0
+
+# Compression and Archives
+py7zr==0.20.8
+rarfile==4.1
+patool==1.12
+
+# ===== NETWORK AND COMMUNICATION =====
+socket.io==4.7.2
+websockets==12.0
+paramiko==3.4.0
+fabric==3.2.2
+
+# Email Processing
+imaplib2==3.6
+email-parser==0.1.2
+eml-parser==1.17.10
+
+# ===== CONFIGURATION AND ENVIRONMENT =====
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+click==8.1.7
+typer==0.9.0
+
+# ===== DEVELOPMENT AND TESTING =====
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+pytest-django==4.7.0
+
+# Code Quality
+black==23.11.0
+pylint==3.0.3
+mypy==1.7.1
+bandit==1.7.5
+safety==2.3.5
+
+# ===== CONTAINERIZATION AND DEPLOYMENT =====
+docker==6.1.3
+kubernetes==28.1.0
+docker-compose==1.29.2
+
+# ===== UTILITIES =====
+tqdm==4.66.1
+rich==13.7.0
+tabulate==0.9.0
+colorama==0.4.6
+humanfriendly==10.0
+
+# ===== SPECIFIC INTEGRATIONS =====
+# LDAP/Active Directory
+ldap3==2.9.1
+python-ldap==3.4.3
+
+# Cloud Platforms
+boto3==1.34.0           # AWS
+azure-identity==1.15.0  # Azure  
+google-cloud==0.34.0    # GCP
+
+# ===== RESEARCH AND ACADEMIC =====
+bibtexparser==1.4.1
+scholarly==1.7.11
+arxiv==2.0.0
+
+# ===== OPTIONAL ADVANCED DEPENDENCIES =====
+# Quantum Computing (for research projects)
+# qiskit==0.45.1
+
+# Blockchain Analysis (for specialized forensics)
+# web3==6.12.0
+
+# Advanced ML/AI
+# transformers==4.36.0
+# langchain==0.0.352
+
+# Time Series Analysis
+# prophet==1.1.5
+# statsforecast==1.4.0
+
+# Note: Some packages may require system dependencies
+# Students should install these based on their chosen capstone option
+# and specific requirements for their implementation.

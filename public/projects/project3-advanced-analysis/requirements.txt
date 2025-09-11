@@ -1,0 +1,177 @@
+# Core Memory Analysis
+volatility3==2.5.0
+rekall==1.7.4
+inVtero-py==2.5.0
+
+# Mobile Forensics
+adb-shell==0.4.4
+pymobiledevice3==2.13.0
+libimobiledevice==1.3.0
+androidviewclient==22.4.14
+
+# Malware Analysis
+yara-python==4.3.1
+pefile==2023.2.7
+pyelftools==0.30
+python-magic==0.4.27
+capstone==5.0.1
+radare2-py==0.2.0
+
+# Machine Learning and AI
+scikit-learn==1.3.2
+tensorflow==2.15.0
+torch==2.1.1
+torchvision==0.16.1
+xgboost==2.0.2
+lightgbm==4.1.0
+
+# Data Analysis and Processing
+pandas==2.1.3
+numpy==1.25.2
+scipy==1.11.4
+networkx==3.2.1
+
+# Visualization and Reporting
+plotly==5.17.0
+matplotlib==3.8.2
+seaborn==0.13.0
+bokeh==3.3.2
+graphviz==0.20.1
+
+# Database and Search
+elasticsearch==8.11.1
+clickhouse-driver==0.2.6
+pymongo==4.6.0
+redis==5.0.1
+
+# Web Framework and API
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+websockets==12.0
+
+# File Processing and Analysis
+python-docx==1.1.0
+openpyxl==3.1.2
+pypdf==3.17.1
+pillow==10.1.0
+mutagen==1.47.0
+exifread==3.0.0
+
+# Compression and Archives
+py7zr==0.20.8
+rarfile==4.1
+patool==1.12
+
+# Cryptography and Security
+cryptography==41.0.8
+pycryptodome==3.19.0
+hashlib-compat==0.1.1
+pysha3==1.0.2
+
+# Network Analysis
+scapy==2.5.0
+dpkt==1.9.8
+pypcap==1.3.0
+netaddr==0.10.1
+
+# System and Process Analysis
+psutil==5.9.6
+wmi==1.5.1
+winreg-kb==1.0.7
+python-registry==1.4
+
+# String and Text Analysis
+regex==2023.10.3
+chardet==5.2.0
+langdetect==1.0.9
+
+# Timeline and Temporal Analysis
+arrow==1.3.0
+python-dateutil==2.8.2
+pytz==2023.3.post1
+
+# Threat Intelligence
+stix2==3.0.1
+taxii2-client==2.3.0
+requests==2.31.0
+httpx==0.25.2
+
+# Configuration and Environment
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+click==8.1.7
+colorama==0.4.6
+rich==13.7.0
+
+# Containerization and Virtualization
+docker==6.1.3
+paramiko==3.4.0
+
+# Development and Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+black==23.11.0
+pylint==3.0.3
+mypy==1.7.1
+bandit==1.7.5
+
+# Performance and Monitoring
+memory-profiler==0.61.0
+line-profiler==4.1.1
+py-spy==0.3.14
+structlog==23.2.0
+
+# Jupyter and Research
+jupyter==1.0.0
+jupyterlab==4.0.9
+notebook==7.0.6
+ipywidgets==8.1.1
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.4.8
+sphinx==7.2.6
+
+# Binary Analysis
+binwalk==2.3.4
+python-lzo==1.15
+python-snappy==0.6.1
+
+# Android Analysis
+frida==16.1.8
+objection==1.11.0
+
+# iOS Analysis
+ipsw==3.1.423
+checkra1n-linux==0.12.4
+
+# Specialized Forensics Tools
+dfvfs==20231007
+dfwinreg==20231207
+plaso==20231126
+pytsk3==20230125
+
+# Statistics and Data Science
+statsmodels==0.14.1
+plotly-dash==2.16.1
+jupyter-dash==0.4.2
+
+# Image and Media Analysis
+opencv-python==4.8.1.78
+imageio==2.33.1
+moviepy==1.0.3
+
+# XML and Data Parsing
+lxml==4.9.3
+xmltodict==0.13.0
+beautifulsoup4==4.12.2
+
+# Utilities
+tqdm==4.66.1
+tabulate==0.9.0
+humanfriendly==10.0
+pyhumps==3.8.0

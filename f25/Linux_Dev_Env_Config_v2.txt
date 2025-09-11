@@ -1,0 +1,434 @@
+CSCI 347: LINUX DEVELOPMENT ENVIRONMENT SETUP GUIDE v2
+Network Security and Digital Forensics
+========================================================
+
+This guide is specifically for Linux users (Ubuntu/Debian/Fedora/CentOS).
+
+========================================================
+PREREQUISITES AND SYSTEM CHECK
+========================================================
+
+Required:
+- Ubuntu 18.04+, Debian 10+, Fedora 30+, or CentOS 8+
+- 8GB RAM minimum (16GB recommended)
+- 100GB free disk space
+- sudo access for package installation
+- Stable internet connection
+
+Check your distribution:
+lsb_release -a
+or
+cat /etc/os-release
+
+========================================================
+STEP 1: GITHUB ACCOUNT SETUP (First Time Users)
+========================================================
+
+1. Create GitHub Account:
+   - Open browser and go to https://github.com
+   - Click "Sign up"
+   - Choose a professional username (you'll use this throughout your career)
+   - Use your student email for education benefits
+   - Verify your email via the link GitHub sends
+
+2. Install Git (if not already installed):
+
+   Ubuntu/Debian:
+   sudo apt update
+   sudo apt install git -y
+
+   Fedora:
+   sudo dnf install git -y
+
+   CentOS/RHEL:
+   sudo yum install git -y
+
+3. Configure Git:
+   Open terminal (Ctrl+Alt+T) and run:
+   
+   git config --global user.name "Your Full Name"
+   git config --global user.email "your.email@example.com"
+   
+   Replace with your actual name and email.
+
+========================================================
+STEP 2: INSTALL PYTHON 3.11
+========================================================
+
+Most Linux distributions include Python, but may not have 3.11.
+
+Ubuntu/Debian:
+--------------
+1. Add Python 3.11 repository (for Ubuntu 22.04 and older):
+   sudo add-apt-repository ppa:deadsnakes/ppa
+   sudo apt update
+
+2. Install Python 3.11 and components:
+   sudo apt install python3.11 python3.11-venv python3.11-pip python3.11-dev -y
+
+3. Verify installation:
+   python3.11 --version
+   
+   Expected: Python 3.11.x
+
+Fedora:
+-------
+1. Python 3.11 is available in Fedora 37+:
+   sudo dnf install python3.11 python3.11-pip python3.11-devel -y
+
+2. For older Fedora versions:
+   sudo dnf install python3-devel gcc openssl-devel libffi-devel -y
+   # Then compile from source or use pyenv
+
+CentOS/RHEL:
+------------
+1. Enable EPEL repository:
+   sudo yum install epel-release -y
+
+2. Install development tools:
+   sudo yum groupinstall "Development Tools" -y
+   sudo yum install openssl-devel libffi-devel bzip2-devel -y
+
+3. Install Python 3.11 from source or use pyenv:
+   # This is more complex - consider using Ubuntu if possible
+
+========================================================
+STEP 3: INSTALL SYSTEM DEPENDENCIES
+========================================================
+
+Install packages needed for Python cryptography and networking tools:
+
+Ubuntu/Debian:
+sudo apt install build-essential libssl-dev libffi-dev python3-dev \
+                 libpcap-dev tcpdump wireshark-common -y
+
+Fedora:
+sudo dnf install gcc openssl-devel libffi-devel python3-devel \
+                 libpcap-devel tcpdump wireshark -y
+
+CentOS/RHEL:
+sudo yum install gcc openssl-devel libffi-devel python3-devel \
+                 libpcap-devel tcpdump wireshark -y
+
+========================================================
+STEP 4: FORK AND CLONE COURSE REPOSITORY
+========================================================
+
+1. Fork the Course Repository:
+   - Open browser and go to: https://github.com/DEmcla/csci347_f25
+   - Click "Fork" button (top right)
+   - This creates YOUR copy of the course materials
+
+2. Clone YOUR Fork:
+   - On YOUR fork's page, click green "Code" button
+   - Copy the HTTPS URL
+
+3. In terminal, navigate to your home directory:
+   cd ~/Documents
+   # Create Documents if it doesn't exist
+   mkdir -p ~/Documents
+
+4. Clone your repository (replace YourUsername):
+   git clone https://github.com/YourUsername/csci347_f25.git
+
+5. Enter the course directory:
+   cd csci347_f25
+
+6. Link to instructor's repository:
+   git remote add upstream https://github.com/DEmcla/csci347_f25.git
+
+========================================================
+STEP 5: CREATE PYTHON VIRTUAL ENVIRONMENT
+========================================================
+
+Virtual environments prevent package conflicts.
+
+1. Ensure you're in the course directory:
+   pwd
+   Should show: /home/yourusername/Documents/csci347_f25
+
+2. Create virtual environment with Python 3.11:
+   python3.11 -m venv venv
+
+3. Activate the virtual environment:
+   source venv/bin/activate
+   
+   You should see (venv) at the beginning of your prompt.
+
+4. Upgrade pip:
+   python -m pip install --upgrade pip
+
+5. Install required packages:
+   pip install cryptography pyOpenSSL volatility3 scapy requests pytest pandas
+
+   If any fail, try one at a time:
+   pip install cryptography
+   pip install pyOpenSSL
+   pip install volatility3
+   pip install scapy
+   pip install requests
+   pip install pytest
+   pip install pandas
+
+========================================================
+STEP 6: CONFIGURE NETWORK TOOLS PERMISSIONS
+========================================================
+
+Some network tools require special permissions:
+
+1. Allow scapy to work without sudo:
+   sudo setcap cap_net_raw+ep $(which python3.11)
+
+2. Add yourself to wireshark group (if using Wireshark):
+   sudo usermod -a -G wireshark $USER
+   
+   Log out and back in for this to take effect.
+
+3. Test network access:
+   # This should work without sudo after the setcap command
+   python -c "from scapy.all import *; print('Scapy working')"
+
+========================================================
+STEP 7: INSTALL VIRTUALIZATION
+========================================================
+
+VirtualBox installation varies by distribution:
+
+Ubuntu/Debian:
+1. Add VirtualBox repository:
+   wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+   echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+   sudo apt update
+
+2. Install VirtualBox:
+   sudo apt install virtualbox-7.0 -y
+
+Fedora:
+sudo dnf install VirtualBox kernel-devel kernel-headers -y
+sudo /sbin/vboxconfig
+
+CentOS/RHEL:
+sudo yum install VirtualBox kernel-devel kernel-headers -y
+sudo /sbin/vboxconfig
+
+Alternative: Use KVM/QEMU (native Linux virtualization):
+Ubuntu/Debian:
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y
+
+========================================================
+STEP 8: VERIFY YOUR SETUP
+========================================================
+
+1. Activate virtual environment:
+   cd ~/Documents/csci347_f25
+   source venv/bin/activate
+
+2. Check Python version:
+   python --version
+   Should show: Python 3.11.x
+
+3. Check installed packages:
+   pip list
+   Should show all required packages
+
+4. Run course verification script:
+   python public/week01-crypto-basics/verify-environment.py
+   
+   Expected output:
+   ✓ Python 3.11+ found
+   ✓ Virtual environment active
+   ✓ Required packages installed
+   ✓ Git configured
+   ✓ Ready to start!
+
+5. Create assignment directory:
+   mkdir -p assignments/CSCI347_f25_FirstName_LastName/week01
+   
+   Replace FirstName_LastName with your actual name.
+
+6. Save setup to GitHub:
+   git add assignments/
+   git commit -m "Initial setup: created assignment directory"
+   git branch -M main
+   git push origin main
+   
+   You'll need GitHub username and Personal Access Token (see Troubleshooting).
+
+========================================================
+TROUBLESHOOTING FOR LINUX
+========================================================
+
+ISSUE: "python3.11: command not found"
+SOLUTION:
+- Check if installed: which python3.11
+- Ubuntu: Make sure deadsnakes PPA is added
+- Alternative: Use pyenv to install Python 3.11
+- Verify PATH includes Python location
+
+ISSUE: pip install fails with "error: Microsoft Visual C++ 14.0 is required"
+SOLUTION: This is a Windows error message - if you see this, you're likely in WSL:
+- Install build tools: sudo apt install build-essential
+- Make sure you're using Linux Python, not Windows Python
+
+ISSUE: Permission denied for network operations
+SOLUTION:
+- Run setcap command from Step 6
+- Or run scripts with sudo (not recommended for development)
+- Check firewall isn't blocking: sudo ufw status
+
+ISSUE: Virtual environment activation fails
+SOLUTION:
+- Check if venv directory exists: ls -la venv/
+- Recreate if corrupted: rm -rf venv && python3.11 -m venv venv
+- Fix permissions: chmod +x venv/bin/activate
+
+ISSUE: Git push requires password repeatedly
+SOLUTION: Use Personal Access Token
+1. GitHub → Settings → Developer settings → Personal access tokens
+2. Generate new token (classic) with "repo" scope
+3. Use token as password when Git prompts
+
+ISSUE: Package compilation fails
+SOLUTION:
+- Install development packages: sudo apt install python3.11-dev build-essential
+- For cryptography: sudo apt install libssl-dev libffi-dev
+- For scapy: sudo apt install libpcap-dev
+
+ISSUE: "No module named '_sqlite3'" or similar
+SOLUTION: Install Python development headers:
+Ubuntu: sudo apt install python3.11-dev libsqlite3-dev
+Fedora: sudo dnf install python3.11-devel sqlite-devel
+
+========================================================
+DAILY WORKFLOW ON LINUX
+========================================================
+
+Each time you work on the course:
+
+1. Open terminal (Ctrl+Alt+T)
+
+2. Navigate to course directory:
+   cd ~/Documents/csci347_f25
+
+3. Activate virtual environment:
+   source venv/bin/activate
+
+4. Pull instructor updates:
+   git fetch upstream
+   git merge upstream/main
+   (If conflicts occur, ask for help)
+
+5. Work on assignments
+
+6. Save your work:
+   git add .
+   git commit -m "Completed [specific task]"
+   git push origin main
+
+7. When done, deactivate:
+   deactivate
+
+========================================================
+USEFUL LINUX COMMANDS
+========================================================
+
+File operations:
+- ls -la: List all files with permissions
+- pwd: Show current directory
+- cd directory: Change directory
+- mkdir -p path: Create directory and parents
+- rm -rf directory: Remove directory and contents
+- chmod +x file: Make file executable
+
+Process management:
+- ps aux | grep python: Find Python processes
+- kill PID: Stop process by ID
+- htop: Interactive process viewer
+
+Network tools:
+- netstat -tulpn: Show listening ports
+- ss -tulpn: Modern netstat alternative
+- iptables -L: Show firewall rules
+- tcpdump -i any: Capture network packets
+
+Package management:
+- apt search package: Search for packages (Ubuntu/Debian)
+- dnf search package: Search for packages (Fedora)
+- dpkg -l | grep python: List installed Python packages
+
+========================================================
+DISTRIBUTION-SPECIFIC NOTES
+========================================================
+
+Ubuntu/Debian users:
+- Most stable and documented approach
+- Deadsnakes PPA provides latest Python versions
+- APT package manager is straightforward
+
+Fedora users:
+- Often has newer packages by default
+- DNF is modern and fast
+- May have Python 3.11 without extra repos
+
+CentOS/RHEL users:
+- Enterprise focus, older but stable packages
+- May require compiling Python 3.11 from source
+- Consider using containers for development
+
+Arch Linux users:
+- Python 3.11 likely available in official repos
+- Use pacman: sudo pacman -S python python-pip
+- AUR may have additional packages
+
+========================================================
+GETTING HELP
+========================================================
+
+If you encounter issues:
+1. Copy the exact error message
+2. Note your Linux distribution and version
+3. Post in Canvas with:
+   - Distribution: lsb_release -a output
+   - Command that failed
+   - Complete error message
+   - Output of: python3.11 --version
+
+Linux-specific resources:
+- Distribution documentation
+- Package manager help: man apt / man dnf
+- Stack Overflow for specific errors
+- GitHub issues for package problems
+
+========================================================
+SUCCESS CHECKLIST
+========================================================
+
+□ GitHub account created and configured
+□ Git installed and configured
+□ Python 3.11 installed
+□ System dependencies installed
+□ Course repository forked and cloned
+□ Virtual environment created and activated
+□ All packages installed successfully
+□ Network tools permissions configured
+□ Verification script passes
+□ First commit pushed to GitHub
+□ Virtualization software installed
+
+You're ready to begin Week 1!
+
+For additional help: Post in Canvas or attend office hours.
+
+========================================================
+SECURITY NOTES FOR LINUX USERS
+========================================================
+
+As a Linux user in a security course:
+- You have native tools like tcpdump, wireshark, netstat
+- Be careful with sudo - only use when necessary
+- Virtual environments protect your system Python
+- Consider using containers for isolation
+- Your firewall (ufw/iptables) may block some exercises
+- Document commands you run for learning purposes
+
+Linux gives you the most control and best matches the course environment!

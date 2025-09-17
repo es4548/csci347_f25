@@ -62,4 +62,4 @@ f25/convert_to_qti.py
 # Canvas exports
 *.imscc
 *.mbz
-canvas-export/
+canvas-export/original_content_backup/

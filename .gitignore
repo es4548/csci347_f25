@@ -55,6 +55,9 @@ gradebook/
 quiz-banks/
 test-banks/
 exams/
+CSCI347_QuizBank/
+f25/QUIZ_BANKS_WEEK3-9.md
+f25/convert_to_qti.py
 
 # Canvas exports
 *.imscc

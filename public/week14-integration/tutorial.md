@@ -2,6 +2,7 @@
 
 **Estimated Time**: 3-4 hours (broken into 4 modules)  
 **Prerequisites**: All previous weeks completed, understanding of security and forensics concepts
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 
 ## 🎯 Tutorial Goals
 

@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4 hours (5 modules)  
 **Prerequisites**: Week 4 authentication systems completed
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 
 ## Learning Objectives
 

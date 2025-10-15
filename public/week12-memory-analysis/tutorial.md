@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4 hours (4 modules)  
 **Prerequisites**: Weeks 10-11 digital forensics foundations completed
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 
 ## Learning Objectives
 

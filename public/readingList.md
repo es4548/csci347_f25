@@ -1,13 +1,15 @@
 # CSCI 347: Complete Reading List
 
-**Course**: Network Security and Digital Forensics  
-**Semester**: Fall 2025  
+**Course**: Network Security and Digital Forensics
+**Semester**: Fall 2025
 **Total Estimated Reading Time**: ~50 hours across 14 weeks
 
-This document consolidates all required and supplementary readings from the course. Use this for:
+**⚠️ IMPORTANT NOTE**: Due to the current government shutdown, many federal resources (NIST, CISA, FBI, etc.) may be temporarily inaccessible. **All readings are now OPTIONAL**. Each tutorial has been designed to be self-sufficient and contains all necessary concepts and explanations. Use these readings for additional depth and professional context when available.
+
+This document consolidates all suggested readings from the course. Use this for:
 - Link testing and validation
 - Study planning and time management
-- Quick reference for all course materials
+- Quick reference for additional materials
 - Comprehensive review preparation
 
 ---

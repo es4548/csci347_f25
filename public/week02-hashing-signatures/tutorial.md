@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4-5 hours  
 **Prerequisites**: Week 1 completed, understanding of symmetric encryption
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 
 ## 🎯 Tutorial Goals
 

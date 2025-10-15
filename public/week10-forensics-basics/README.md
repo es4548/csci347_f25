@@ -61,7 +61,7 @@ By the end of this week, you will be able to:
 
 ## 📚 **Step 1: Optional Readings (90 minutes)**
 
-**Core Digital Forensics Standards** *(Required)*:
+**Core Digital Forensics Standards** *(Optional)*:
 
 ### Primary References (60 minutes)
 - **NIST SP 800-86**: Guide to Integrating Forensic Techniques into Incident Response *(30 min)*

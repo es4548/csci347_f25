@@ -47,14 +47,14 @@ This week synthesizes your complete security knowledge:
 - **Week 7 SIEM**: Centralized monitoring and behavioral analytics
 - **Week 8 Assessment**: Risk evaluation and architectural validation
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
 **Core Architecture Frameworks** *(Required)*:
 - **NIST Cybersecurity Framework** - Architecture alignment *(30 min)*
 - **Zero Trust Architecture (NIST SP 800-207)** - Modern security models *(30 min)*
 - **STRIDE Threat Modeling Guide** - Microsoft threat modeling methodology *(30 min)*
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST Cybersecurity Framework v1.1**
    - **Link**: https://www.nist.gov/cyberframework

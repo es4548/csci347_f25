@@ -15,7 +15,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Professional development and industry trends
+□ 📖 Complete optional readings (90 min) - Professional development and industry trends
 □ 🎥 Master tutorial (4 hours) - Capstone integration and portfolio development
 □ 🏗️ Complete Capstone Project (8 hours) - Professional cybersecurity platform
 □ 🎯 Present final project (2 hours) - Professional presentation and demonstration
@@ -67,9 +67,9 @@ By completing this capstone week, you will demonstrate:
 
 ---
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
-**Professional Development and Industry Leadership** *(Required)*:
+**Professional Development and Industry Leadership** *(Optional)*:
 
 ### Cybersecurity Career Development (45 minutes)
 - **NIST Cybersecurity Framework**: Workforce development and professional roles *(15 min)*
@@ -115,7 +115,7 @@ By completing this capstone week, you will demonstrate:
 4. **Deploy security orchestration** and automated response (SOAR)
 5. **Complete capstone project** demonstrating comprehensive course mastery
 
-## 📚 Required Reading (3 hours)
+## 📚 Optional Reading (3 hours)
 
 1. **NIST SP 800-61r2: Incident Handling Guide**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf

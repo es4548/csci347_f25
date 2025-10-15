@@ -32,7 +32,7 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#-step-1-readings-45-minutes)
+1. **Suggested (Optional)readings: ** - (#-step-1-readings-45-minutes)
 2. **Follow tutorial** - [Tutorial](tutorial.md) (2.5 hours)  
 3. **Complete assignment** - [Assignment](assignment.md) (1.5 hours)
 4. **Take quiz** - Quiz available in Canvas

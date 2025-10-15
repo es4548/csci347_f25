@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4 hours  
 **Prerequisites**: Weeks 3-7 completed (PKI, Authentication, Access Control, Network Security, Monitoring)  
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 **Learning Focus**: Synthesis and assessment of complete security architecture through comprehensive testing  
 
 ## 🎯 Tutorial Goals: Part I Capstone Assessment

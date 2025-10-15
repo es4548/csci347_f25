@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4 hours  
 **Prerequisites**: Week 9 completed, understanding of file systems and security architecture
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 **Legal Framework**: Following NIST SP 800-86 and RFC 3227 guidelines
 
 ## 🎯 Tutorial Goals

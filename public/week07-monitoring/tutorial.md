@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4.5-5 hours  
 **Prerequisites**: Week 6 completed, understanding of network security and intrusion detection
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 
 ## 🎯 Tutorial Goals
 

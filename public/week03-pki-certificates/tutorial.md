@@ -2,6 +2,7 @@
 
 **Estimated Time**: 3-4 hours (broken into 5 modules)  
 **Prerequisites**: Week 2 completed, understanding of digital signatures and public key cryptography
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 
 ## 🎯 Tutorial Goals
 

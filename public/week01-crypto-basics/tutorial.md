@@ -1,7 +1,8 @@
 # Week 1 Tutorial: Symmetric Encryption with Python
 
-**Estimated Time**: 2.5-3 hours (broken into 4 modules)  
-**Prerequisites**: Completed required readings, Python environment set up
+**Estimated Time**: 2.5-3 hours (broken into 4 modules)
+**Prerequisites**: Python environment set up
+**Note**: All external readings are optional. This tutorial is self-sufficient.
 
 ## 🎯 Tutorial Goals
 

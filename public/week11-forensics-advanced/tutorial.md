@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4 hours (self-paced)  
 **Prerequisites**: Week 10 completed, understanding of basic forensics methodology
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 **Project Context**: Completing Project 2 - Incident Investigation Platform
 
 ## 🎯 Tutorial Goals

@@ -2,6 +2,7 @@
 
 **Estimated Time**: 4 hours (4 modules)  
 **Prerequisites**: Weeks 3-8 completed (complete security infrastructure)
+**Note**: All external readings are optional. This tutorial is self-sufficient and contains all necessary concepts.
 
 ## Learning Objectives
 

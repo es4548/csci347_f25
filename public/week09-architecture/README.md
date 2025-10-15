@@ -13,7 +13,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Architecture frameworks, threat modeling
+□ 📖 Complete optional readings (90 min) - Architecture frameworks, threat modeling
 □ 🎥 Finish tutorial (4 hours) - Comprehensive architecture design
 □ 💻 Submit assignment (4 hours) - Enterprise architecture project
 □ ✅ Pass quiz by Sunday (15 min)

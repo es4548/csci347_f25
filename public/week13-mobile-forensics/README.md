@@ -19,7 +19,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Mobile/IoT forensics and legal considerations
+□ 📖 Complete optional readings (90 min) - Mobile/IoT forensics and legal considerations
 □ 🎥 Master tutorial (4 hours) - Advanced mobile & IoT investigation techniques  
 □ 💻 Complete Project 3 (6 hours) - Advanced Analysis Toolkit with mobile/IoT integration
 □ 💻 Submit assignment (3 hours) - Comprehensive mobile forensics investigation
@@ -64,9 +64,9 @@ By completing this extended week, you will master:
 
 ---
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
-**Advanced Mobile and IoT Forensics** *(Required)*:
+**Advanced Mobile and IoT Forensics** *(Optional)*:
 
 ### Mobile Forensics Standards and Legal Framework (45 minutes)
 - **NIST SP 800-101**: Guidelines for Mobile Device Forensics *(20 min)*
@@ -84,7 +84,7 @@ By completing this extended week, you will master:
 - **IoT Forensics Research**: Academic papers on network-based IoT investigation *(15 min)*
   - Focus: Cutting-edge techniques and emerging challenges
 
-**📖 Reading Success Check**: Can you explain the unique challenges of mobile and IoT forensics compared to traditional computer forensics, and describe the legal framework governing mobile device investigations?
+**📖 Optional Reading Success Check**: Can you explain the unique challenges of mobile and IoT forensics compared to traditional computer forensics, and describe the legal framework governing mobile device investigations?
 
 ---
 
@@ -117,7 +117,7 @@ By completing this extended week, you will master:
 4. **Understand mobile communication** forensics (SMS, calls, messaging apps)
 5. **Build mobile forensics toolkit** with open-source tools
 
-## 📚 Required Reading (4 hours)
+## 📚 Optional Reading (4 hours)
 
 1. **NIST SP 800-101r1: Mobile Device Forensics**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-101r1.pdf

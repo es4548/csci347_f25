@@ -37,9 +37,9 @@ By the end of this week, you will be able to:
 3. **Complete assignment** - [Assignment](assignment.md) (1.5 hours)
 4. **Take quiz** - Quiz available in Canvas
 
-## 📚 **Step 1: Readings (45 minutes)**
+## 📚 **Step 1: Optional Readings (45 minutes)**
 
-**Core Reading** *(Required)*:
+**Core Reading** *(Optional)*:
 - **NIST RBAC Model** - Role Based Access Control overview *(20 min)*
   - Focus: RBAC components and principles
   - Why: Industry standard access control model

@@ -103,7 +103,7 @@ By completing this extended week, you will master:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#required-reading)
+1. **Complete opitonal readings** - [opitonal Reading](#optional-reading)
 2. **Follow tutorial** - [Tutorial](tutorial.md)
 3. **Complete assignment** - [Assignment](assignment.md)
 4. **Take quiz** - Quiz available in Canvas

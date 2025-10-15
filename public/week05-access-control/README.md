@@ -12,7 +12,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (45 min) - RBAC concepts, access control models
+□ 📖 Optional readings (45 min) - RBAC concepts, access control models
 □ 🎥 Finish tutorial (2.5 hours) - Role-based access control implementation
 □ 💻 Submit assignment (1.5 hours) - RBAC system with file access demo
 □ ✅ Complete quiz in Canvas by Sunday

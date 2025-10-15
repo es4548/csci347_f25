@@ -118,7 +118,7 @@ By the end of this week, you will be able to:
 4. **Implement chain of custody** procedures and documentation
 5. **Analyze Windows, Linux, and macOS** file systems and artifacts
 
-## 📚 Required Reading (4 hours)
+## 📚 Optional Reading (4 hours)
 
 1. **NIST SP 800-86: Guide to Integrating Forensic Techniques**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-86.pdf

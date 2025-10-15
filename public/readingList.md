@@ -16,7 +16,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 1: Cryptography Basics
 
-### Required Reading (2.5 hours)
+### Optional Reading (2.5 hours)
 
 1. **"Crypto 101" by Laurens Van Houtven** ⭐ **CORE**
    - **Link**: https://www.crypto101.io/
@@ -53,7 +53,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 2: Hashing and Digital Signatures
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST FIPS 180-4: Secure Hash Standard (SHS)**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
@@ -76,7 +76,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 3: PKI and Certificates
 
-### Required Reading (5 hours)
+### Optional Reading (5 hours)
 
 1. **"Bulletproof SSL and TLS" Free Chapters**
    - **Link**: https://www.feistyduck.com/library/bulletproof-tls-guide/online/
@@ -99,7 +99,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 4: Multi-Factor Authentication Systems
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST SP 800-63-3: Digital Identity Guidelines**
    - **Link**: https://pages.nist.gov/800-63-3/
@@ -116,7 +116,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 5: Access Control and Authorization
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST RBAC Paper: "Role-Based Access Controls"**
    - **Link**: https://csrc.nist.gov/CSRC/media/Publications/conference-paper/1992/10/13/role-based-access-controls/final/documents/ferraiolo-kuhn-92.pdf
@@ -132,7 +132,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 6: Network Security
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST SP 800-41: Guidelines for Firewall and Firewall Policy**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41.pdf
@@ -149,7 +149,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 7: Security Monitoring
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST SP 800-92: Guide to Computer Security Log Management**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-92.pdf
@@ -166,7 +166,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 8: Vulnerability Assessment
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST SP 800-115: Technical Guide to Information Security Testing**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf
@@ -183,7 +183,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 9: Security Architecture
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST Cybersecurity Framework v1.1**
    - **Link**: https://www.nist.gov/cyberframework/framework
@@ -201,7 +201,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 10: Digital Forensics Foundations
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST SP 800-86: Guide to Integrating Forensic Techniques**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-86.pdf
@@ -220,7 +220,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 11: Advanced Forensics
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **"File System Forensic Analysis" by Brian Carrier**
    - **Chapters**: 1-5 (File system fundamentals)
@@ -237,7 +237,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 12: Memory Analysis
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **"The Art of Memory Forensics" by Ligh, Case, Levy & Walters**
    - **Chapters**: 1-4 (Memory acquisition and analysis)
@@ -255,7 +255,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 13: Mobile Forensics
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST SP 800-101: Mobile Device Forensics Guidelines**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-101r1.pdf
@@ -274,7 +274,7 @@ This document consolidates all suggested readings from the course. Use this for:
 
 ## Week 14: Integration and Capstone
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **Selected Papers from Previous Weeks** (Review)
    - **NIST Cybersecurity Framework** (Week 9)

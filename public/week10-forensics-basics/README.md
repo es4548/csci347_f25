@@ -17,7 +17,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Digital forensics methodology & legal frameworks
+□ 📖 Complete optional readings (90 min) - Digital forensics methodology & legal frameworks
 □ 🎥 Finish tutorial (4 hours) - Comprehensive digital forensics foundations
 □ 💻 Submit assignment (4 hours) - Complete forensic investigation of simulated incident
 □ ✅ Complete quiz in Canvas by Sunday
@@ -59,7 +59,7 @@ By the end of this week, you will be able to:
 
 ---
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
 **Core Digital Forensics Standards** *(Required)*:
 
@@ -104,7 +104,7 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#required-reading)
+1. **Complete optional readings** - [optional Reading](#optional-reading)
 2. **Follow tutorial** - [Tutorial](tutorial.md)
 3. **Complete assignment** - [Assignment](assignment.md)
 4. **Take quiz** - Quiz available in Canvas

@@ -60,12 +60,12 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#required-reading) 
+1. **Complete optional readings** - [Optional Reading](#Optional-reading) 
 2. **Follow tutorial** - [Tutorial](tutorial.md)
 3. **Complete assignment** - [Assignment](assignment.md) 
 4. **Take quiz** - Quiz available in Canvas
 
-## 📚 **Required Reading (2 hours)**
+## 📚 **Optional Reading (2 hours)**
 
 **SIEM and Security Monitoring Standards**:
 - **NIST SP 800-92** - Guide to Computer Security Log Management
@@ -82,7 +82,7 @@ By the end of this week, you will be able to:
 - **Incident Response Frameworks** - Automated response and orchestration
 - **Threat Intelligence Integration** - Enhancing detection with IOC feeds
 
-### Additional Required Reading (4 hours)
+### Additional Optional Reading (4 hours)
 
 1. **Snort User Manual**
    - **Link**: https://www.snort.org/documents

@@ -18,7 +18,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Advanced forensics and legal admissibility
+□ 📖 Complete optional readings (90 min) - Advanced forensics and legal admissibility
 □ 🎥 Master tutorial (4 hours) - Network, database, correlation, and expert reporting
 □ 💻 Submit assignment (4 hours) - Complete multi-source forensic investigation platform
 □ ✅ Complete quiz in Canvas by Sunday
@@ -65,9 +65,9 @@ By completing this week, you will master:
 
 ---
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
-**Advanced Digital Forensics and Legal Standards** *(Required)*:
+**Advanced Digital Forensics and Legal Standards** *(Optional)*:
 
 ### Expert Testimony and Legal Admissibility (45 minutes)
 - **Daubert v. Merrell Dow Pharmaceuticals** (1993): Scientific evidence admissibility standards *(15 min)*
@@ -103,7 +103,7 @@ By completing this week, you will master:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#required-reading)
+1. **Complete Optional readings** - [Optional Reading](#optional-reading)
 2. **Follow tutorial** - [Tutorial](tutorial.md)
 3. **Complete assignment** - [Assignment](assignment.md)
 4. **Take quiz** - Quiz available in Canvas
@@ -117,7 +117,7 @@ By completing this week, you will master:
 4. **Perform anti-forensics detection** and evasion countermeasures
 5. **Build automated analysis pipelines** with Python scripting
 
-## 📚 Required Reading (4 hours)
+## 📚 Optional Reading (4 hours)
 
 1. **The Sleuth Kit Documentation**
    - **Link**: https://sleuthkit.org/sleuthkit/docs/

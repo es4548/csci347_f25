@@ -16,7 +16,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Memory forensics, malware analysis
+□ 📖 Complete optional readings (90 min) - Memory forensics, malware analysis
 □ 🎥 Finish tutorial (4 hours) - Advanced memory analysis with Volatility
 □ 💻 Submit assignment (4 hours) - Memory forensics investigation
 □ 🏗️ Begin Project 3 (ongoing) - Advanced Analysis Toolkit development
@@ -46,9 +46,9 @@ This week specializes in memory analysis while building on comprehensive forensi
 
 ---
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
-**Core Memory Forensics** *(Required)*:
+**Core Memory Forensics** *(Optional)*:
 - **Volatility Framework Documentation** - Memory analysis techniques *(30 min)*
 - **NIST SP 800-86** - Chapter 4: Memory Analysis Guidelines *(30 min)*
 - **Advanced Malware Analysis** - Memory-based indicators and behavioral analysis *(30 min)*
@@ -117,7 +117,7 @@ This week specializes in memory analysis while building on comprehensive forensi
 4. **Investigate rootkits and steganography** techniques
 5. **Build automated memory analysis** workflows with Python
 
-## 📚 Required Reading (4 hours)
+## 📚 Optional Reading (4 hours)
 
 1. **Volatility 3 Documentation**
    - **Link**: https://volatility3.readthedocs.io/

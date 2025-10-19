@@ -12,7 +12,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (45 min) - MFA concepts, authentication factors
+□ 📖 Complete optional readings (45 min) - MFA concepts, authentication factors
 □ 🎥 Finish tutorial (2.5 hours) - MFA implementation with existing libraries
 □ 💻 Submit assignment (1.5 hours) - Multi-factor authentication system
 □ ✅ Complete quiz in Canvas by Sunday
@@ -32,14 +32,14 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#-step-1-readings-45-minutes)
+1. **Suggested (Optional)readings: ** - (#-step-1-readings-45-minutes)
 2. **Follow tutorial** - [Tutorial](tutorial.md) (2.5 hours)
 3. **Complete assignment** - [Assignment](assignment.md) (1.5 hours)
 4. **Take quiz** - Quiz available in Canvas
 
 ## 📚 **Step 1: Readings (45 minutes)**
 
-**Core Reading** *(Required)*:
+**Core Reading** *(optional)*:
 - **NIST Digital Identity Guidelines** - SP 800-63B sections 1-3 *(25 min)*
   - Focus: Authentication factors and security requirements
   - Why: Industry standard for authentication security

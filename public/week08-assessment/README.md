@@ -63,12 +63,12 @@ By the end of this capstone week, you will have demonstrated mastery of:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#required-reading) 
+1. **Complete optional readings** - [Optional Reading](#optional-reading) 
 2. **Follow tutorial** - [Tutorial](tutorial.md)
 3. **Complete assignment** - [Assignment](assignment.md) 
 4. **Take quiz** - Quiz available in Canvas
 
-## 📚 **Required Reading (2 hours)**
+## 📚 **Opitonal Reading (2 hours)**
 
 **Professional Security Assessment Standards**:
 - **NIST SP 800-115** - Technical Guide to Information Security Testing and Assessment
@@ -85,7 +85,7 @@ By the end of this capstone week, you will have demonstrated mastery of:
 - **SANS Penetration Testing** - Professional ethical hacking methodologies
 - **CVE and CVSS Guidelines** - Vulnerability scoring and prioritization
 
-### Additional Required Reading (4 hours)
+### Additional Optional Reading (4 hours)
 
 1. **NIST SP 800-115: Technical Guide to Security Testing**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf

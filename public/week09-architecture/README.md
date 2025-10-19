@@ -13,7 +13,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Architecture frameworks, threat modeling
+□ 📖 Complete optional readings (90 min) - Architecture frameworks, threat modeling
 □ 🎥 Finish tutorial (4 hours) - Comprehensive architecture design
 □ 💻 Submit assignment (4 hours) - Enterprise architecture project
 □ ✅ Pass quiz by Sunday (15 min)
@@ -32,7 +32,7 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#required-reading) 
+1. **Complete optional readings** - [Optional Reading](#optional-reading) 
 2. **Follow tutorial** - [Tutorial](tutorial.md)
 3. **Complete assignment** - [Assignment](assignment.md) 
 4. **Take quiz** - Quiz available in Canvas
@@ -47,14 +47,14 @@ This week synthesizes your complete security knowledge:
 - **Week 7 SIEM**: Centralized monitoring and behavioral analytics
 - **Week 8 Assessment**: Risk evaluation and architectural validation
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
 **Core Architecture Frameworks** *(Required)*:
 - **NIST Cybersecurity Framework** - Architecture alignment *(30 min)*
 - **Zero Trust Architecture (NIST SP 800-207)** - Modern security models *(30 min)*
 - **STRIDE Threat Modeling Guide** - Microsoft threat modeling methodology *(30 min)*
 
-### Required Reading (4 hours)
+### Optional Reading (4 hours)
 
 1. **NIST Cybersecurity Framework v1.1**
    - **Link**: https://www.nist.gov/cyberframework

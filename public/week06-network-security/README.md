@@ -56,12 +56,12 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#required-reading) 
+1. **Optional readings** -   [](#Optional-reading) 
 2. **Follow tutorial** - [Tutorial](tutorial.md)
 3. **Complete assignment** - [Assignment](assignment.md) 
 4. **Take quiz** - Quiz available in Canvas
 
-## 📚 **Required Reading (2 hours)**
+## 📚 **Optional Reading (2 hours)**
 
 **Integration Standards**:
 - **NIST SP 800-207** - Zero Trust Architecture (identity-network integration)
@@ -77,7 +77,7 @@ By the end of this week, you will be able to:
 - **Software-Defined Perimeter** - Dynamic network access based on identity
 - **ZTNA (Zero Trust Network Access)** - Modern approaches to network security
 
-### Additional Required Reading (4 hours)
+### Additional Optional Reading (4 hours)
 
 1. **NIST SP 800-41r1: Guidelines on Firewalls**
    - **Link**: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-41r1.pdf

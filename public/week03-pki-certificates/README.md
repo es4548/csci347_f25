@@ -12,7 +12,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (60 min) - X.509 certificates, trust chains, validation
+□ 📖 Complete optional readings (60 min) - X.509 certificates, trust chains, validation
 □ 🎥 Finish tutorial (2.5 hours) - Certificate analysis and validation techniques  
 □ 💻 Submit assignment (1.5 hours) - Certificate analyzer tool
 □ ✅ Complete quiz in Canvas by Sunday
@@ -32,14 +32,14 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#-step-1-readings-60-minutes) 
+1. ****Suggested (Optional)readings:** - (#-step-1-readings-60-minutes) 
 2. **Follow tutorial** - [Tutorial](tutorial.md) (2.5 hours)
 3. **Complete assignment** - [Assignment](assignment.md) (1.5 hours)
 4. **Take quiz** - Quiz available in Canvas
 
-## 📚 **Step 1: Readings (60 minutes)**
+## 📚 **Step 1: Optional Readings (60 minutes)**
 
-**Core Reading** *(Required)*:
+**Core Reading** *(optional)*:
 - **Bulletproof SSL and TLS** - Chapter 1 *(30 min)*
   - Focus: Certificate validation process and trust chains
   - Why: Understanding how browsers verify certificates

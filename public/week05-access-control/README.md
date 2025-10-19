@@ -12,7 +12,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (45 min) - RBAC concepts, access control models
+□ 📖 Optional readings (45 min) - RBAC concepts, access control models
 □ 🎥 Finish tutorial (2.5 hours) - Role-based access control implementation
 □ 💻 Submit assignment (1.5 hours) - RBAC system with file access demo
 □ ✅ Complete quiz in Canvas by Sunday
@@ -32,14 +32,14 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#-step-1-readings-45-minutes)
+1. **Suggested (Optional)readings: ** - (#-step-1-readings-45-minutes)
 2. **Follow tutorial** - [Tutorial](tutorial.md) (2.5 hours)  
 3. **Complete assignment** - [Assignment](assignment.md) (1.5 hours)
 4. **Take quiz** - Quiz available in Canvas
 
-## 📚 **Step 1: Readings (45 minutes)**
+## 📚 **Step 1: Optional Readings (45 minutes)**
 
-**Core Reading** *(Required)*:
+**Core Reading** *(Optional)*:
 - **NIST RBAC Model** - Role Based Access Control overview *(20 min)*
   - Focus: RBAC components and principles
   - Why: Industry standard access control model

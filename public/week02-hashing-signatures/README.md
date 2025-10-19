@@ -11,7 +11,7 @@
 ```
 Progress: [░░░░░░░░░░] 0%
 
-□ 📖 Complete readings (90 min) - Hash functions, HMAC, Digital signatures
+□ 📖 Complete optional readings (90 min) - Hash functions, HMAC, Digital signatures
 □ 🎥 Finish tutorial (3 hours) - Document integrity system implementation
 □ 💻 Submit assignment (3 hours) - Digital signature verification system
 □ ✅ Complete quiz in Canvas by Sunday
@@ -31,12 +31,12 @@ By the end of this week, you will be able to:
 
 ## Start Here (5 minutes)
 
-1. **Complete readings** - [Required Reading](#-step-1-readings-90-minutes) (90 minutes)
+1. **Suggested (Optional)readings: ** - (#-step-1-readings-90-minutes) (90 minutes)
 2. **Follow tutorial** - [Tutorial](tutorial.md) (2 hours)
 3. **Complete assignment** - [Assignment](assignment.md) (2 hours)
 4. **Take quiz** - Quiz available in Canvas
 
-## 📚 **Step 1: Readings (90 minutes)**
+## 📚 **Step 1: Optional Readings (90 minutes)**
 
 **Core Cryptographic Concepts** *(Required)*:
 - **Crypto101 Chapter 5**: Hash Functions *(30 min)*

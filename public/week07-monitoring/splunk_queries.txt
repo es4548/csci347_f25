@@ -1,0 +1,123 @@
+# splunk_queries.txt
+# Use these in Splunk Search. Adjust index/source and field names to match your ingested data.
+
+########################################
+# 1 — Failed login attempts (authentication logs)
+# Find repeated failed logins per user over 10 minutes
+index=auth_logs sourcetype=auth OR source="auth.log"
+action=failed OR status="failure"
+| stats count AS failed_count earliest(_time) AS first_seen latest(_time) AS last_seen by user, src_ip
+| where failed_count >= 5
+| sort - failed_count
+
+########################################
+# 2 — Brute force detection (fast detector using streamstats)
+index=auth_logs action=failed OR status="failure"
+| bin _time span=1m
+| streamstats count as failed_by_user window=10 by user
+| where failed_by_user >= 5
+| stats min(_time) as first_ts max(_time) as last_ts values(src_ip) as src_ips count as attempts by user
+| convert ctime(first_ts) as first_seen ctime(last_ts) as last_seen
+
+########################################
+# 3 — Successful login shortly after multiple failures (credential stuffing / compromised credentials)
+index=auth_logs
+| eval is_fail = if(action="failed" OR status="failure",1,0), is_success = if(action="success" OR status="ok",1,0)
+| streamstats current=t window=20 sum(is_fail) as fail_count by user
+| where is_success=1 AND fail_count>=3
+| table _time user src_ip fail_count
+
+########################################
+# 4 — Suspicious network scanning (many distinct ports or hosts from same src_ip)
+index=network_logs sourcetype=netflow OR source="network.log"
+| stats dc(dest_ip) as dest_count dc(dest_port) as port_count earliest(_time) as first_seen latest(_time) as last_seen by src_ip
+| where dest_count >= 20 OR port_count >= 50
+| sort - dest_count
+
+########################################
+# 5 — High volume outgoing data (possible exfiltration)
+index=network_logs action=allowed OR action=accept
+| stats sum(bytes) as total_bytes by src_ip, dest_ip
+| where total_bytes > 50000000
+| sort - total_bytes
+
+########################################
+# 6 — Unusual destination (internal host talking to rare external host)
+index=network_logs
+| lookup known_good_external_hosts ip AS dest_ip OUTPUT ip as match
+| where isnull(match)
+| stats count by src_ip, dest_ip
+| sort - count
+
+########################################
+# 7 — Lateral movement / SMB access across hosts (privilege escalation indicator)
+index=windows_logs sourcetype="WinEventLog:Security" OR source="sysmon"
+EventCode=4624 OR EventCode=4625
+| stats count by Account_Name, Workstation_Name
+| where count > 5
+
+########################################
+# 8 — New or modified binaries / file integrity (file creation or checksum change)
+index=sysmon OR index=host_files (event_id=11 OR event_type="file_create" OR action="file_modified")
+| stats latest(_time) as last_seen values(file_path) as files by host
+| where files!=""
+
+########################################
+# 9 — File writes by unusual processes (possible ransomware)
+index=sysmon process_name=*.exe file_path=*
+| stats count by process_name, file_path, host
+| where count>20
+| sort - count
+
+########################################
+# 10 — Rapid process spawn chains (possible exploit)
+index=sysmon parent_process=* process_name=*
+| transaction parent_process startswith="process_start" endswith="process_end" maxspan=1m
+| where eventcount > 10
+| table host parent_process process_name eventcount duration
+
+########################################
+# 11 — Privilege escalation (sudden add to privileged group)
+index=windows_logs EventCode=4728 OR EventCode=4729 OR EventCode=4732
+| table _time Account_Name Target_Group Subject_User_Name
+
+########################################
+# 12 — Data exfil over DNS (suspicious DNS sizes / many TXT responses)
+index=dns_logs
+| stats count, max(rdata_size) as max_rdata by client_ip, rrname
+| where max_rdata > 200 OR count > 100
+| sort - max_rdata
+
+########################################
+# 13 — Suspicious user behavior (anomalous hours)
+index=auth_logs
+| eval hour=strftime(_time,"%H")
+| stats count by user, hour
+| eventstats avg(count) as avg_by_user by user
+| where count > 3*avg_by_user
+
+########################################
+# 14 — Correlation: port scan followed by successful brute-force
+# (scan from src_ip within 5 minutes before multiple failed logins from same src)
+index=network_logs dest_port=* OR index=auth_logs
+| eval source=index
+| appendcols [ search index=network_logs | bin _time span=1m | stats dc(dest_port) AS ports by src_ip, _time ]
+| appendcols [ search index=auth_logs action=failed | bin _time span=1m | stats count AS failures by src_ip, _time ]
+| where ports>=50 AND failures>=5
+| table src_ip ports failures
+
+########################################
+# 15 — Malware indicator: known bad hash matches
+index=file_intel OR index=sysmon file_hash=*
+| lookup threat_hashes hash as file_hash OUTPUT hash as match
+| where match=hash
+| table _time host file_path file_hash
+
+########################################
+# 16 — Baseline: top talkers & services (for dashboards)
+index=network_logs
+| stats sum(bytes) as bytes count as flows by src_ip, dest_port
+| sort - bytes
+| head 50
+
+# End of splunk_queries.txt

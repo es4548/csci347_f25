@@ -1,0 +1,77 @@
+<!-- dashboard_config.xml -->
+<dashboard>
+  <label>Security Monitoring Dashboard</label>
+  <description>Overview: failed logins, suspicious network, file integrity, anomalies.</description>
+  <row>
+    <panel>
+      <title>Failed Login Attempts (Top users)</title>
+      <chart>
+        <search>
+          <query>index=auth_logs action=failed OR status="failure" | stats count by user | sort - count | head 10</query>
+          <earliest>-24h@h</earliest>
+        </search>
+      </chart>
+    </panel>
+
+    <panel>
+      <title>Brute Force Suspects (IPs)</title>
+      <table>
+        <search>
+          <query>index=auth_logs action=failed | stats count by src_ip, user | where count >= 5 | sort - count</query>
+          <earliest>-24h@h</earliest>
+        </search>
+      </table>
+    </panel>
+  </row>
+
+  <row>
+    <panel>
+      <title>Top Outbound Bytes (Potential Exfil)</title>
+      <chart>
+        <search>
+          <query>index=network_logs action=allowed | stats sum(bytes) as total_bytes by src_ip | sort - total_bytes | head 10</query>
+          <earliest>-24h@h</earliest>
+        </search>
+      </chart>
+    </panel>
+
+    <panel>
+      <title>Suspicious Destinations (Rare externals)</title>
+      <table>
+        <search>
+          <query>index=network_logs | lookup known_good_external_hosts ip AS dest_ip OUTPUT ip as match | where isnull(match) | stats count by dest_ip | sort - count | head 20</query>
+          <earliest>-7d@d</earliest>
+        </search>
+      </table>
+    </panel>
+  </row>
+
+  <row>
+    <panel>
+      <title>File Integrity Alerts (New/Modified Binaries)</title>
+      <table>
+        <search>
+          <query>index=sysmon (event_id=11 OR event_type="file_create" OR action="file_modified") | stats latest(_time) as last_seen values(file_path) as files by host | sort - last_seen</query>
+          <earliest>-7d@d</earliest>
+        </search>
+      </table>
+    </panel>
+
+    <panel>
+      <title>Incident Summary</title>
+      <html>
+        <![CDATA[
+          <div style="padding:10px;">
+            <p><b>Open Alerts:</b> <span id="open_alerts">--</span></p>
+            <p><b>Recent Notables:</b></p>
+            <ul>
+              <li>Brute force attempts</li>
+              <li>High outbound transfers</li>
+              <li>Suspicious domain DNS</li>
+            </ul>
+          </div>
+        ]]>
+      </html>
+    </panel>
+  </row>
+</dashboard>

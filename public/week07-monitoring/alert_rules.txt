@@ -1,0 +1,56 @@
+# alert_rules.txt
+# Format: NAME | SEARCH | CRON / SCHEDULE | TRIGGER CONDITION | ACTIONS / NOTES
+
+1) Name: Brute Force - multiple failed logins
+Search:
+index=auth_logs action=failed OR status="failure"
+| stats count by user, src_ip
+| where count >= 5
+Schedule: run every 5 minutes
+Trigger: if results > 0
+Action: send email / webhook; include top 5 src_ip; create notable event in ES
+
+2) Name: Successful Login After Failures (Possible Credential Stuffing)
+Search:
+index=auth_logs
+| eval is_fail=if(action="failed" OR status="failure",1,0), is_success=if(action="success" OR status="ok",1,0)
+| streamstats current=t window=20 sum(is_fail) as fail_count by user
+| where is_success=1 AND fail_count>=3
+Schedule: run every 10 minutes
+Trigger: if results > 0
+Action: create ticket; disable account manual review
+
+3) Name: Port Scan Detector
+Search:
+index=network_logs
+| stats dc(dest_port) as port_count by src_ip
+| where port_count >= 50
+Schedule: run every 5 minutes
+Trigger: results > 0
+Action: block IP on firewall (if automated) / alert SOC
+
+4) Name: Data Exfiltration - High Outbound Volume
+Search:
+index=network_logs action=allowed
+| stats sum(bytes) as total_bytes by src_ip, dest_ip
+| where total_bytes > 50000000
+Schedule: run every 15 minutes
+Trigger: results > 0
+Action: notify SOC; add to incident for review
+
+5) Name: Malware Hash Match
+Search:
+index=sysmon OR index=file_intel file_hash=*
+| lookup threat_hashes hash as file_hash OUTPUT hash as match
+| where match=hash
+Schedule: real-time or every 1 minute
+Trigger: results > 0
+Action: quarantine host; send high-priority alert
+
+6) Name: Privilege Escalation Group Change
+Search:
+index=windows_logs EventCode=4728 OR EventCode=4732 OR EventCode=4729
+| table _time Account_Name Target_Group Subject_User_Name
+Schedule: real-time
+Trigger: results > 0
+Action: notify CISO & SOC; create incident
